@@ -2,6 +2,6 @@
 
 ## usage 
 
->> ./hello.swift
+    ./hello.swift
 
 Swift script is easy & useful!!
