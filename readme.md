@@ -1,6 +1,6 @@
-h1. Swift Scripts
+# Swift Scripts
 
-h2. usage 
+## usage 
 
 >> ./hello.swift
 
