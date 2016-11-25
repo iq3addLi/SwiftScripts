@@ -25,5 +25,5 @@ if let str = substring(CommandLine.arguments){
     print("\(str)")
 }
 else{
-    print("usage: [string] [location] [length]\n")
+    print("usage: substring.swift [string] [location] [length]\n")
 }
