@@ -1,7 +1,7 @@
-# Swift Scripts
+# Swift Shells
 
-## usage 
+# Usage 
 
     ./hello.swift
 
-Swift script is easy & useful!!
+Swift shell script is easy & useful!!
