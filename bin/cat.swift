@@ -1,10 +1,10 @@
 #!/usr/bin/swift
 
 //
-//  copy.swift
-//  SwiftScripts
+//  cat.swift
+//  SwiftShells
 //
-//  Created by iq3 on 2016/11/21.
+//  Created by Arakane Ikumi on 2016/11/26.
 //  Copyright © 2016年 addli.co.jp. All rights reserved.
 //
 
@@ -27,17 +27,23 @@ func filepath(_ path:String ) -> String{
 }
 
 let arguments = CommandLine.arguments
-if arguments.count > 2 {
-    let target = filepath(arguments[1])
-    let dist   = filepath(arguments[2])
+if arguments.count == 3,arguments[1] == "hex" {
+    let target = filepath(arguments[2])
     
-    do{
-        try fileManager.copyItem(atPath: target, toPath: dist)
-    }catch{
-        print("error: \(error)")
+    if let url = URL(string:target), let data = try? Data(contentsOf:url ){
+        print("\(data)")
     }
+    else{ print("error.") }
+}
+else if arguments.count == 2{
+    let target = filepath(arguments[1])
+    
+    if let str = try? String(contentsOfFile:target, encoding:.utf8){
+        print("\(str)")
+    }
+    else{ print("error.") }
+
 }else{
     // usage
-    print("\(arguments[0]) [target path] [destination path]")
+    print("\(arguments[0]) [hex] [file path]")
 }
-

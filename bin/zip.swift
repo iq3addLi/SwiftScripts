@@ -1,9 +1,10 @@
 #!/usr/bin/swift
+
 //
-//  exec.swift
-//  SwiftScripts
+//  zip.swift
+//  SwiftShells
 //
-//  Created by iq3 on 2016/11/25.
+//  Created by iq3 on 2016/11/28.
 //  Copyright © 2016年 addli.co.jp. All rights reserved.
 //
 
@@ -13,12 +14,17 @@ let arguments = CommandLine.arguments
 if arguments.count > 1
 {
     let process = Process()
-    process.launchPath = arguments[1]
-    process.arguments = arguments[2..<arguments.count].map { $0 }
+    process.launchPath = "/usr/bin/zip"
+    process.arguments = arguments[1..<arguments.count].map { $0 }
     process.terminationHandler = { p in
         switch p.terminationReason{
         case .exit:
-            print("complete.")
+            if FileManager.default.fileExists(atPath: arguments[1]){
+                print("complete.")
+            }else{
+                print("file create failed.")
+            }
+            
         case .uncaughtSignal:
             print("fail. status code '\(p.terminationStatus)'")
         }
@@ -28,5 +34,5 @@ if arguments.count > 1
     while( process.isRunning ){ Thread.sleep(forTimeInterval: 0.1) }
 }
 else{
-    print("usage: exec.swift [command] [arguments...]\n")
+    print("usage: zip.swift [zip file path] [target file path]\n")
 }
