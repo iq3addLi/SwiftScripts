@@ -25,6 +25,7 @@ srandom(num)
 let rand = random()
 
 #elseif os(macOS)
+import Darwin
 let rand = arc4random_uniform(UINT32_MAX)
     
 #else
