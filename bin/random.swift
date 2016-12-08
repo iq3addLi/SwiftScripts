@@ -24,16 +24,18 @@ srandom(num)
 // Generate random number
 let rand = random()
 
+// output
+print("\(rand)")
+
 #elseif os(macOS)
 import Darwin
 let rand = arc4random_uniform(UINT32_MAX)
     
+// output
+print("\(rand)")
+ 
 #else
 print("This platform is unsupport.")
-exit(0)
-    
+
 #endif
-    
-// random output
-print("\(rand)")
 

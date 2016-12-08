@@ -4,7 +4,7 @@
 //  cat.swift
 //  SwiftShells
 //
-//  Created by Arakane Ikumi on 2016/11/26.
+//  Created by iq3 on 2016/11/26.
 //  Copyright © 2016年 addli.co.jp. All rights reserved.
 //
 
