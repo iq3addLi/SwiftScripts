@@ -9,7 +9,6 @@
 //
 
 import CoreImage
-import Darwin
 
 extension CGImage {
     
